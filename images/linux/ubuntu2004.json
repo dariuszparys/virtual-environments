@@ -211,7 +211,7 @@
                 "{{template_dir}}/scripts/installers/vcpkg.sh",
                 "{{template_dir}}/scripts/installers/dpkg-config.sh",
                 "{{template_dir}}/scripts/installers/pypy.sh",
-                "{{template_dir}}/scripts/installers/python.sh",
+                "{{template_dir}}/scripts/installers/python.sh"
             ],
             "environment_vars": [
                 "HELPER_SCRIPTS={{user `helper_script_folder`}}",
