@@ -115,11 +115,6 @@
         },
         {
             "type": "file",
-            "source": "{{ template_dir }}/scripts/SoftwareReport",
-            "destination": "{{user `image_folder`}}"
-        },
-        {
-            "type": "file",
             "source": "{{template_dir}}/toolsets/toolset-2004.json",
             "destination": "{{user `installer_script_folder`}}/toolset.json"
         },
@@ -142,16 +137,6 @@
             "environment_vars": [
                 "IMAGE_VERSION={{user `image_version`}}",
                 "IMAGE_OS={{user `image_os`}}",
-                "HELPER_SCRIPTS={{user `helper_script_folder`}}"
-            ],
-            "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
-        },
-        {
-            "type": "shell",
-            "scripts": [
-                "{{template_dir}}/scripts/installers/complete-snap-setup.sh"
-            ],
-            "environment_vars": [
                 "HELPER_SCRIPTS={{user `helper_script_folder`}}"
             ],
             "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
@@ -205,7 +190,6 @@
                 "{{template_dir}}/scripts/installers/miniconda.sh",
                 "{{template_dir}}/scripts/installers/nvm.sh",
                 "{{template_dir}}/scripts/installers/nodejs.sh",
-                "{{template_dir}}/scripts/installers/rust.sh",
                 "{{template_dir}}/scripts/installers/terraform.sh",
                 "{{template_dir}}/scripts/installers/packer.sh",
                 "{{template_dir}}/scripts/installers/vcpkg.sh",
@@ -245,18 +229,6 @@
         },
         {
             "type": "shell",
-            "scripts": [
-                "{{template_dir}}/scripts/installers/homebrew.sh"
-            ],
-            "environment_vars": [
-                "HELPER_SCRIPTS={{user `helper_script_folder`}}",
-                "DEBIAN_FRONTEND=noninteractive",
-                "INSTALLER_SCRIPT_FOLDER={{user `installer_script_folder`}}"
-            ],
-            "execute_command": "/bin/sh -c '{{ .Vars }} {{ .Path }}'"
-        },
-        {
-            "type": "shell",
             "expect_disconnect": true,
             "scripts": [
                 "{{template_dir}}/scripts/base/reboot.sh"
@@ -276,23 +248,6 @@
             "type": "shell",
             "script": "{{template_dir}}/scripts/base/apt-mock-remove.sh",
             "execute_command": "sudo sh -c '{{ .Vars }} {{ .Path }}'"
-        },
-        {
-            "type": "shell",
-            "inline": [
-                "pwsh -File {{user `image_folder`}}/SoftwareReport/SoftwareReport.Generator.ps1 -OutputDirectory {{user `image_folder`}}",
-                "pwsh -File {{user `image_folder`}}/tests/RunAll-Tests.ps1 -OutputDirectory {{user `image_folder`}}"
-            ],
-            "environment_vars": [
-                "IMAGE_VERSION={{user `image_version`}}",
-                "INSTALLER_SCRIPT_FOLDER={{user `installer_script_folder`}}"
-            ]
-        },
-        {
-            "type": "file",
-            "source": "{{user `image_folder`}}/Ubuntu-Readme.md",
-            "destination": "{{template_dir}}/Ubuntu2004-README.md",
-            "direction": "download"
         },
         {
             "type": "shell",
