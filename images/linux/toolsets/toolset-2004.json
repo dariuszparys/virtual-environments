@@ -47,7 +47,7 @@
                 "1.16.*"
             ],
             "default": "1.15.*"
-        },
+        }
     ],
     "apt": {
         "common_packages": [
