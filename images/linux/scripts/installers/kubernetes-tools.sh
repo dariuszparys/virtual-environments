@@ -25,5 +25,3 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 download_url="https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"
 curl -s "$download_url" | bash
 mv kustomize /usr/local/bin
-
-invoke_tests "Tools" "Kubernetes tools"

@@ -24,5 +24,3 @@ versions=$(get_toolset_value '.gcc.versions[]')
 for version in ${versions[*]}; do
     InstallGcc $version
 done
-
-invoke_tests "Tools" "gcc"

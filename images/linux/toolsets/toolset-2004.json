@@ -49,24 +49,6 @@
             "default": "1.15.*"
         },
     ],
-    "powershellModules": [
-        {"name": "MarkdownPS"},
-        {"name": "Pester"},
-        {"name": "PSScriptAnalyzer"}
-    ],
-    "azureModules": [
-        {
-            "name": "az",
-            "url" : "https://raw.githubusercontent.com/Azure/az-ps-module-versions/main/versions-manifest.json",
-            "versions": [
-                "5.7.0"
-            ],
-            "zip_versions": [
-                "3.1.0",
-                "4.4.0"
-            ]
-        }
-    ],
     "apt": {
         "common_packages": [
             "build-essential",
@@ -159,16 +141,6 @@
             "ubuntu:20.04"
         ]
     },
-    "pipx": [
-        {
-            "package": "yamllint",
-            "cmd": "yamllint"
-        },
-        {
-            "package": "ansible-base",
-            "cmd": "ansible"
-        }
-    ],
     "dotnet": {
         "aptPackages": [
             "dotnet-sdk-3.1",

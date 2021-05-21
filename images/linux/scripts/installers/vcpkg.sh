@@ -28,5 +28,3 @@ ln -sf $VCPKG_INSTALLATION_ROOT/vcpkg /usr/local/bin
 if isUbuntu16; then
     ln -sf g++-5 /usr/bin/g++
 fi
-
-invoke_tests "Tools" "Vcpkg"

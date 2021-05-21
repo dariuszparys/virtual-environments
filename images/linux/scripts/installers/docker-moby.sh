@@ -44,5 +44,3 @@ done
 # image. Logout _should_ return a zero exit code even if no credentials were
 # stored from earlier.
 docker logout
-
-invoke_tests "Tools" "Docker"

@@ -11,5 +11,3 @@ echo "AZURE_EXTENSION_DIR=$AZURE_EXTENSION_DIR" | tee -a /etc/environment
 
 # install azure devops Cli extension
 az extension add -n azure-devops
-
-invoke_tests "CLI.Tools" "Azure DevOps CLI"

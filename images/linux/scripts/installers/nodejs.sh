@@ -31,5 +31,3 @@ echo "Creating the symlink for [now] command to vercel CLI"
 ln -s /usr/local/bin/vercel /usr/local/bin/now
 
 rm -rf ~/n
-
-invoke_tests "Node" "Node.js"

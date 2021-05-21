@@ -11,5 +11,3 @@ for package in $common_packages $cmd_packages; do
     echo "Install $package"
     apt-get install -y --no-install-recommends $package
 done
-
-invoke_tests "Apt"
